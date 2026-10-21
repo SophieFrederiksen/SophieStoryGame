@@ -10,12 +10,12 @@
 // --------------------------------------------------
 
 // First, we create a variable for the current scene being displayed
-let currentScene = "Floor6";
+let currentScene = "floor6";
 
 // Then, we create an object that stores the data for each scene,
 const scenes = {
   // See "backyard" for the first example
-  Floor6: {
+  floor6: {
     title: "Location: Floor 6",
     character: "Interviewee: you",
     text: "You are in your apartment and your friend is missing. Which floor do you want to search?",
