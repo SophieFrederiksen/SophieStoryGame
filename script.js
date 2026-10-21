@@ -10,84 +10,291 @@
 // --------------------------------------------------
 
 // First, we create a variable for the current scene being displayed
-let currentScene = "backyard";
+let currentScene = "Floor6";
 
 // Then, we create an object that stores the data for each scene,
 const scenes = {
   // See "backyard" for the first example
-  backyard: {
-    title: "Location: Backyard",
-    character: "Interviewee:Grandma",
-    text: "Text: well what I remember happening is that Darcie went inside to play with her pretend kitchen, I heard her neighbor mention he was really hungry, and the dog ran around really quickly",
+  Floor6: {
+    title: "Location: Floor 6",
+    character: "Interviewee: you",
+    text: "You are in your apartment and your friend is missing. Which floor do you want to search?",
+    <img src="soccer.jpeg" alt="apt6" width="200">
     // you can choose how many choices to include
     // each choice can have text, an action, and/or nextScene
     choices: [
       {
-        text: "Chase after the dog (-10 HP)",
+        text: "Floor 1",
         action: function () {
-          updateHealth(-10);
+        pickUpItem("friend's mail");
+          updateTime(5);
         },
-        nextScene: "entrance"
+        nextScene: "floor1"
       },
       {
-        text: "Ask about the neighbor",
-        nextScene: "hallway"
+        text: "Floor 2",
+        action: function () {
+          updateTime(5);
+        },
+        nextScene: "floor2"
       },
       {
-          text: "Pick up the brass key",
-          action: function () {
-            pickUpItem("brass key");
-          },
-          nextScene: "hallway"
+        text: "Floor 3",
+        action: function () {
+          pickUpItem("friend's clothes");
+          updateTime(5);
+        },
+        nextScene: "floor3"
+      },
+      {
+        text: "Floor 4",
+        action: function () {
+          updateTime(5);
+        },
+        nextScene: "floor4"
+      },
+      {
+        text: "Floor 5",
+        action: function () {
+          pickUpItem("friend's food");
+          updateTime(5);
+        },
+        nextScene: "floor5"
+      },
+    ]
+  },
+
+  floor1: {
+    title: "Location: Floor 1",
+    character: "Interviewee: Doorman",
+    text: "The doorman says he hasn't seen your friend in over 24 hours, but gives you your friends mail. Where do you want to search next?",
+    choices: [
+       {
+        text: "Floor 2",
+        action: function () {
+          updateTime(5);
+        },
+        nextScene: "floor2"
+      },
+      {
+        text: "Floor 3",
+        action: function () {
+          pickUpItem("friend's clothes");
+          updateTime(5);
+        },
+        nextScene: "floor3"
+      },
+      {
+        text: "Floor 4",
+        action: function () {
+          updateTime(5);
+        },
+        nextScene: "floor4"
+      },
+      {
+        text: "Floor 5",
+        action: function () {
+          pickUpItem("friend's food");
+          updateTime(5);
+        },
+        nextScene: "floor5"
+      },
+      {
+        text: "Floor 6",
+        action: function () {
+          updateTime(5);
+          gobackhome();
+        },
       }
     ]
   },
 
-  entrance: {
-    title: "Location: Entrance",
-    character: "Interviewee:Neighbor",
-    text: "well what I remember...",
+  floor2: {
+    title: "Location: Floor 2",
+    character: "Interviewee: Family",
+    text: "The family says they don't know where your friend is. They seem pretty busy, where do you want to search?",
     choices: [
       {
-        text: "Ask about the dog",
-        nextScene: "backyard"
+        text: "Floor 1",
+        action: function () {
+        pickUpItem("friend's mail");
+          updateTime(5);
+        },
+        nextScene: "floor1"
       },
-         {
-        text: "Ask about the neighbor",
-        nextScene: "hallway"
+      {
+        text: "Floor 3",
+        action: function () {
+          pickUpItem("friend's clothes");
+          updateTime(5);
+        },
+        nextScene: "floor3"
+      },
+      {
+        text: "Floor 4",
+        action: function () {
+          updateTime(5);
+        },
+        nextScene: "floor4"
+      },
+      {
+        text: "Floor 5",
+        action: function () {
+          pickUpItem("friend's food");
+          updateTime(5);
+        },
+        nextScene: "floor5"
+      },
+      {
+        text: "Floor 6",
+        action: function () {
+          updateTime(5);
+          gobackhome();
+        },
       }
     ]
   },
 
-  hallway: {
-    title: "The Hallway",
-    text: "The hallway is dark and silent.",
+   floor3: {
+     title: "Location: Floor 3",
+    character: "Interviewee: Couple",
+    text: "The couple says they haven't seen your friend, but gives you a pile of her clothes that she left in the laundry room. Where to next?",
     choices: [
       {
-        text: "backyard",
-        nextScene: "lockedDoor"
+        text: "Floor 1",
+        action: function () {
+        pickUpItem("friend's mail");
+          updateTime(5);
+        },
+        nextScene: "floor1"
+      },
+      {
+        text: "Floor 2",
+        action: function () {
+          updateTime(5);
+        },
+        nextScene: "floor2"
+      },
+      
+      {
+        text: "Floor 4",
+        action: function () {
+          updateTime(5);
+        },
+        nextScene: "floor4"
+      },
+      {
+        text: "Floor 5",
+        action: function () {
+          pickUpItem("friend's food");
+          updateTime(5);
+        },
+        nextScene: "floor5"
+      },
+      {
+        text: "Floor 6",
+        action: function () {
+          updateTime(5);
+          gobackhome();
+        },
       }
     ]
   },
 
-   lockedDoor: {
-    title: "The Locked Door",
-    text: "The door handle doesn't move.",
+  floor4: {
+     title: "Location: Floor 4",
+    character: "Interviewee: Old man",
+    text: "The old man is very grumpy and tells you to leave. Where do you search next?",
     choices: [
       {
-        text: "Try to open it",
-        action: unlockDoor
+        text: "Floor 1",
+        action: function () {
+        pickUpItem("friend's mail");
+          updateTime(5);
+        },
+        nextScene: "floor1"
       },
       {
-        text: "Go back",
-        nextScene: "backyard"
+        text: "Floor 2",
+        action: function () {
+          updateTime(5);
+        },
+        nextScene: "floor2"
+      },
+      
+      {
+        text: "Floor 3",
+        action: function () {
+          updateTime(5);
+        },
+        nextScene: "floor3"
+      },
+      {
+        text: "Floor 5",
+        action: function () {
+          pickUpItem("friend's food");
+          updateTime(5);
+        },
+        nextScene: "floor5"
+      },
+      {
+        text: "Floor 6",
+        action: function () {
+          updateTime(5);
+          gobackhome();
+        },
+      }
+    ]
+  },
+  floor5: {
+     title: "Location: Floor 5",
+    character: "Interviewee: Young woman",
+    text: "The woman says your friends doordash order accidentally got dropped off at her place. She also says that she hasn't seen your friend since when they went to pilates this morning. What do you want to do next?",
+    choices: [
+      {
+        text: "Floor 1",
+        action: function () {
+        pickUpItem("friend's mail");
+          updateTime(5);
+        },
+        nextScene: "floor1"
+      },
+      {
+        text: "Floor 2",
+        action: function () {
+          updateTime(5);
+        },
+        nextScene: "floor2"
+      },
+      {
+        text: "Floor 3",
+        action: function () {
+          pickUpItem("friend's clothes");
+          updateTime(5);
+        },
+        nextScene: "floor3"
+      },
+      
+      {
+        text: "Floor 4",
+        action: function () {
+          updateTime(5);
+        },
+        nextScene: "floor4"
+      },
+      {
+        text: "Floor 6",
+        action: function () {
+          updateTime(5);
+          gobackhome();
+        },
       }
     ]
   },
 
    solution: {
-    title: "The solution",
-    text: "You solved the mystery!",
+    title: "Location: Floor 6",
+    text: "You go back to your apartment to drop off the food and find your friend taking a nap on the couch. You solved the mystery!",
     
   }
 };
@@ -165,19 +372,19 @@ updateScene(currentScene);
 // --------------------------------------------------
 
 // Create a variable for health
-let health = 100;
+let timeSpent = 0;
 
 // Display current health
-const healthDisplay = document.getElementById("health-display");
+const timeDisplay = document.getElementById("time-display");
 
 // Create a function to update health 
-function updateHealth(amount) {
-  health += amount;
-  healthDisplay.textContent = health;
+function updateTime(amount) {
+  timeSpent += amount;
+  timeDisplay.textContent = timeSpent;
 }
 
 // This refreshes the health display
-updateHealth(0);
+updateTime(0);
 
 // --------------------------------------------------
 // INVENTORY
@@ -208,11 +415,11 @@ function pickUpItem(itemName) {
 // --------------------------------------------------
 
 // Create a function that checks if the inventory contains one item and if so shows the win condition scene.
-function unlockDoor() {
-  if (inventory.includes("brass key")) {
+function gobackhome() {
+  if (inventory.includes("friend's food")) {
     updateScene("solution");
   } else {
-    messageDisplay.textContent = "The door is locked.";
+    messageDisplay.textContent = "Cant go back home yet";
   }
 }
 
