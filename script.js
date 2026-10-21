@@ -19,7 +19,6 @@ const scenes = {
     title: "Location: Floor 6",
     character: "Interviewee: you",
     text: "You are in your apartment and your friend is missing. Which floor do you want to search?",
-    <img src="soccer.jpeg" alt="apt6" width="200">
     // you can choose how many choices to include
     // each choice can have text, an action, and/or nextScene
     choices: [
@@ -417,9 +416,10 @@ function pickUpItem(itemName) {
 // Create a function that checks if the inventory contains one item and if so shows the win condition scene.
 function gobackhome() {
   if (inventory.includes("friend's food")) {
+    messageDisplay.textContent = "You win";
+
     updateScene("solution");
-  } else {
+  } else { 
     messageDisplay.textContent = "Cant go back home yet";
   }
 }
-
