@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blocky Face</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            font-family: sans-serif;
+        }
+
+        /* Main Yellow Container */
+        .face-container {
+            width: 450px;
+            height: 530px;
+            background-color: #FFF95D; /* Bright yellow background */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 30px;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        /* Eyes Row */
+        .eyes-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .eye {
+            width: 175px;
+            height: 175px;
+            background-color: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pupil {
+            width: 65px;
+            height: 65px;
+            background-color: #000000;
+        }
+
+        /* Mouth Box */
+        .mouth {
+            width: 380px;
+            height: 260px;
+            background-color: #000000;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 18px 0 18px;
+            overflow: hidden;
+        }
+
+        /* Teeth Row */
+        .teeth-row {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .tooth {
+            width: 32px;
+            height: 32px;
+            background-color: #FFFFFF;
+        }
+
+        /* Split Tongue */
+        .tongue-container {
+            display: flex;
+            gap: 8px; /* The dark vertical split line */
+            background-color: #000000;
+            align-items: flex-end;
+        }
+
+        .tongue-half {
+            width: 75px;
+            height: 115px;
+            background-color: #E23924; /* Red color */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="face-container">
+        <!-- Eyes -->
+        <div class="eyes-row">
+            <div class="eye">
+                <div class="pupil"></div>
+            </div>
+            <div class="eye">
+                <div class="pupil"></div>
+            </div>
+        </div>
+
+        <!-- Mouth -->
+        <div class="mouth">
+            <!-- 7 Blocky Teeth -->
+            <div class="teeth-row">
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+            </div>
+
+            <!-- Split Tongue -->
+            <div class="tongue-container">
+                <div class="tongue-half"></div>
+                <div class="tongue-half"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

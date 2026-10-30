@@ -4,6 +4,7 @@ body{
     word-spacing: 0.1em;
     letter-spacing:0.01em;
     font-weight:400px;
+    background-color: beige;
 }
 .heading{
     font-size: 2em;
@@ -23,4 +24,5 @@ body{
     margin:50px;
     padding:20px;
     width:300px;
+    text-align:center;
 }
