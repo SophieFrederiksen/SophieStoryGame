@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="script.js" defer></script>
-
+ <header>
+        <h1 class="heading"id="scene-title">  </h1>
+        <h2 id="character-name">  </h2>
+    </header>
 </head>
 <body>
     <header>
       <nav>
-            <ul> 
-                <li><a href="index.html">Home</a></li>
-            </ul>
-            <ul> 
-                <li><a href="game.html">Play the game</a></li>
-            </ul>
-            <ul> 
-                <li><a href="about.html">About the creator</a></li>
-            </ul>
+            
+                <a href="index.html" style="color:crimson">Home</a>
+            
+                <p><a href="about.html" style="color:crimson">About the creator</a></p>
+            
         </nav>
     </header>
 
     <main>
-    <header>
-        <h1 id="scene-title">  </h1>
-        <h2 id="character-name">  </h2>
-    </header>
+   
     
     <section>
     <p id="scene-text">     </p>
@@ -39,14 +36,11 @@
         
     <section>
         <p> Time Spent (mins):</p>
-        <ul>
-            <li id="time-display"> 0</li>
-        </ul>
+        
+        <p id="time-display">0</p>
 
         <p> Inventory:</p>
-        <ul>
-            <li id="inventory-display"> </li>
-        </ul>
+        <p id="inventory-display"> </p>
 
         <p id="message-display"></p>
     </section>
