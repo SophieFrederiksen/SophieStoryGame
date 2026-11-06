@@ -12,29 +12,62 @@
             border-style: double;
         }
     </style>
+     <nav class="navbar md:navbar-expand bg-1 theme-info">
+  <div class="container-fluid bg-inverse">
+    <a class="navbar-brand" href="#">Home</a>
+    <button class="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer" data-bs-target="#navbarDrawer" aria-controls="navbarDrawer" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" aria-hidden="true"></span>
+    </button>
+    <dialog class="drawer drawer-end" tabindex="-1" id="navbarDrawer" aria-labelledby="navbarDrawerLabel">
+      <div class="drawer-header">
+        <h5 class="drawer-title" id="navbarDrawerLabel">Pages</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Close"></button>
+      </div>
+      <div class="drawer-body mb-2 md:mb-0">
+        <ul class="nav navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="about.html">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+        </ul>
+    
+      </div>
+    </dialog>
+  </div>
+</nav>
     <h1 class="heading">The NYC Apartment Murder</h1>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
 </head>
 <body>
-    
-    <a href="about.html" style="color:crimson;">About Me</a>
+   
     <p class="card">You and your best friend live together in an apartment in NYC. Coming home from work, ready for a night out, you find that your friend is missing. It is your job to search the building's floors and find out what happened to your friend.</p>
     <img src="outsideapartment.png" alt="apartment" width="200" style="border-radius: 10px; border: 2px solid black;">
     <br>
     <form action="game.html" method="get">
-        <label for="your name">Your name:</label>
-        <input type="text" id="your name" name="your name" placeholder="type here">
-        <br>
-        <label for="friend name" style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Your friend's name:</label>
-        <input type="text" id="friend name" name="friend name" placeholder="type here">
+        <div class="input-group">
+     <span class="input-group-text">Your name</span>
+     <textarea class="form-control" aria-label="With textarea"></textarea>
+    </div>
+       <div class="input-group">
+     <span class="input-group-text">Friend's name</span>
+     <textarea class="form-control" aria-label="With textarea"></textarea>
+    </div>
          <h5>Have you played this game before?</h5>
-         
-        <label for="yes" style="color:darkgreen">Yes</label>
-        <input type="radio" id="yes" name="playedbefore" value="yes">
-        <label for="no" style="color:darkred">No</label>
-        <input type="radio" id="no" name="playedbefore" value="no">
-        <label for="idk" style="color:darkorchid">I don't know</label>
-        <input type="radio" id="idk" name="playedbefore" value="idk">
-        <br>
+         <div class="form-field">
+  <input class="radio" name="radios" type="radio" id="radioLabel" />
+  <label for="radioLabel">Yes</label>
+</div>
+<div class="form-field">
+  <input class="radio" name="radios" type="radio" id="radioLabel2" />
+  <label for="radioLabel2">No</label>
+</div>
+<div class="form-field">
+  <input class="radio" name="radios" type="radio" id="radioLabel3" />
+  <label for="radioLabel3">I don't know</label>
+</div>
+
         <label for ="VisiNYC"> Have you visited NYC before?</label>
         <select id="VisitNYC" name="VisitNYC">
             <option value="yes">Yes</option>
@@ -45,5 +78,6 @@
         <input type="submit" value="Play!">
         
     </form>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
 </body>
 </html>
